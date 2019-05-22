@@ -19,4 +19,12 @@ def won?(board)
   if board.all? { |place| place == ' ' }
     return false
   end
+  for combo in WIN_COMBINATIONS
+    if combo.all? { |index| board[index] == 'X' }
+      return combo
+    elsif combo.all? { |index| board[index] == 'O' }
+      return combo
+    end
+  end
+  false
 end
