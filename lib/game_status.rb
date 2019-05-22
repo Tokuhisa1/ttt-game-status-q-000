@@ -41,6 +41,12 @@ def over?(board)
   if won?(board)
     return true
   end
-  
+
   draw?(board) || full?(board)
+end
+
+def winner(board)
+  if won?(board)
+    board[won?(board)[0]]
+  end
 end
